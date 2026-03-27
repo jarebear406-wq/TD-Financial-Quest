@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>TD Financial Quest</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- DESKTOP SIDEBAR (hidden on mobile via CSS) -->
+  <aside class="desktop-sidebar" style="display:none" id="desktop-sidebar">
+    <div class="sidebar-logo">
+      <div class="sidebar-shield">TD</div>
+      <div class="sidebar-title">Financial Quest<span>by TD Bank</span></div>
+    </div>
+    <div class="sidebar-player">
+      <div class="sidebar-avatar">🦊</div>
+      <div class="sidebar-player-name" id="sb-name">Financial Hero</div>
+      <div class="sidebar-player-level" id="sb-level">Level 1 · Penny Saver</div>
+      <div class="sidebar-xp-bar-wrap"><div class="sidebar-xp-bar" id="sb-xp-bar"></div></div>
+      <div class="sidebar-stats">
+        <div class="sidebar-stat"><div class="sidebar-stat-val" id="sb-xp">0</div><div class="sidebar-stat-lbl">XP</div></div>
+        <div class="sidebar-stat"><div class="sidebar-stat-val" id="sb-coins">0</div><div class="sidebar-stat-lbl">Coins</div></div>
+        <div class="sidebar-stat"><div class="sidebar-stat-val" id="sb-streak">1</div><div class="sidebar-stat-lbl">Streak</div></div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section-label">Home</div>
+      <button class="sidebar-nav-item active" id="snav-home" onclick="App.showScreen('screen-home')">
+        <span class="nav-icon">🗺️</span><span class="sidebar-nav-label">Quest Map</span>
+      </button>
+      <div class="sidebar-section-label">Games</div>
+      <button class="sidebar-nav-item" id="snav-runner" onclick="App.showScreen('screen-runner')">
+        <span class="nav-icon">🏃</span><span class="sidebar-nav-label">Money Runner</span>
+        <span class="sidebar-nav-badge">RUN</span>
+      </button>
+      <button class="sidebar-nav-item" id="snav-quiz" onclick="App.showScreen('screen-quiz')">
+        <span class="nav-icon">🧠</span><span class="sidebar-nav-label">Finance Academy</span>
+        <span class="sidebar-nav-badge">QUIZ</span>
+      </button>
+      <button class="sidebar-nav-item" id="snav-budget" onclick="App.showScreen('screen-budget')">
+        <span class="nav-icon">📊</span><span class="sidebar-nav-label">Budget Boss</span>
+        <span class="sidebar-nav-badge">STRAT</span>
+      </button>
+      <button class="sidebar-nav-item" id="snav-invest" onclick="App.showScreen('screen-invest')">
+        <span class="nav-icon">📈</span><span class="sidebar-nav-label">Stock Surge</span>
+        <span class="sidebar-nav-badge">INVEST</span>
+      </button>
+      <div class="sidebar-section-label">Learn</div>
+      <button class="sidebar-nav-item" id="snav-lessons" onclick="App.showScreen('screen-lessons')">
+        <span class="nav-icon">📚</span><span class="sidebar-nav-label">Finance Library</span>
+      </button>
+      <button class="sidebar-nav-item" id="snav-leaderboard" onclick="App.showScreen('screen-leaderboard')">
+        <span class="nav-icon">🏆</span><span class="sidebar-nav-label">Leaderboard</span>
+      </button>
+      <button class="sidebar-nav-item" id="snav-profile" onclick="App.showScreen('screen-profile')">
+        <span class="nav-icon">👤</span><span class="sidebar-nav-label">My Profile</span>
+      </button>
+    </nav>
+    <div class="sidebar-footer">TD Financial Quest © 2024<br/>For educational purposes only.</div>
+  </aside>
+
+  <!-- SPLASH SCREEN -->
+  <div id="screen-splash" class="screen active">
+    <div class="splash-bg"></div>
+    <div class="splash-content">
+      <div class="td-logo">
+        <div class="td-shield">TD</div>
+      </div>
+      <h1 class="game-title">Financial<br/><span>Quest</span></h1>
+      <p class="tagline">Learn. Earn. Level Up.</p>
+      <button class="btn-primary" onclick="App.showScreen('screen-home')">Start Adventure</button>
+    </div>
+    <div class="coins-bg"></div>
+  </div>
+
+  <!-- HOME / MAP SCREEN -->
+  <div id="screen-home" class="screen">
+    <header class="top-bar">
+      <div class="td-logo-small">TD</div>
+      <div class="player-stats">
+        <span class="stat"><span class="icon">⭐</span><span id="xp-display">0 XP</span></span>
+        <span class="stat"><span class="icon">💰</span><span id="coins-display">0</span></span>
+      </div>
+      <button class="btn-icon" onclick="App.showScreen('screen-profile')">👤</button>
+    </header>
+
+    <div class="home-banner">
+      <div class="home-banner-emoji">🎯</div>
+      <div class="home-banner-text">
+        <h2 id="banner-greeting">Welcome back!</h2>
+        <p>Pick a quest to earn XP and level up your financial skills. Every game teaches you real money skills.</p>
+      </div>
+    </div>
+    <div class="world-map">
+      <h2 class="map-title">Choose Your Quest</h2>
+      <p class="map-subtitle">4 games · 6 lessons · Unlimited learning</p>
+      <div class="quest-grid">
+
+        <div class="quest-card unlocked" onclick="App.showScreen('screen-runner')">
+          <div class="quest-icon runner-icon">🏃</div>
+          <div class="quest-info">
+            <h3>Money Runner</h3>
+            <p>Dodge debt, collect savings!</p>
+            <div class="quest-badge">RUNNER</div>
+          </div>
+          <div class="quest-stars" id="runner-stars">☆☆☆</div>
+        </div>
+
+        <div class="quest-card unlocked" onclick="App.showScreen('screen-quiz')">
+          <div class="quest-icon quiz-icon">🧠</div>
+          <div class="quest-info">
+            <h3>Finance Academy</h3>
+            <p>Master money concepts!</p>
+            <div class="quest-badge">LEARN</div>
+          </div>
+          <div class="quest-stars" id="quiz-stars">☆☆☆</div>
+        </div>
+
+        <div class="quest-card unlocked" onclick="App.showScreen('screen-budget')">
+          <div class="quest-icon budget-icon">📊</div>
+          <div class="quest-info">
+            <h3>Budget Boss</h3>
+            <p>Balance your life budget!</p>
+            <div class="quest-badge">STRATEGY</div>
+          </div>
+          <div class="quest-stars" id="budget-stars">☆☆☆</div>
+        </div>
+
+        <div class="quest-card unlocked" onclick="App.showScreen('screen-invest')">
+          <div class="quest-icon invest-icon">📈</div>
+          <div class="quest-info">
+            <h3>Stock Surge</h3>
+            <p>Grow your investments!</p>
+            <div class="quest-badge">INVEST</div>
+          </div>
+          <div class="quest-stars" id="invest-stars">☆☆☆</div>
+        </div>
+
+      </div>
+    </div>
+
+    <nav class="bottom-nav">
+      <button class="nav-btn active" onclick="App.showScreen('screen-home')">🗺️<span>Map</span></button>
+      <button class="nav-btn" onclick="App.showScreen('screen-leaderboard')">🏆<span>Ranks</span></button>
+      <button class="nav-btn" onclick="App.showScreen('screen-lessons')">📚<span>Learn</span></button>
+      <button class="nav-btn" onclick="App.showScreen('screen-profile')">👤<span>Profile</span></button>
+    </nav>
+  </div>
+
+  <!-- RUNNER GAME SCREEN -->
+  <div id="screen-runner" class="screen">
+    <div class="game-header">
+      <button class="btn-back" onclick="Runner.quit()">✕</button>
+      <div class="game-score-bar">
+        <span>💰 <span id="runner-score">0</span></span>
+        <span>❤️ <span id="runner-lives">3</span></span>
+        <span>📏 <span id="runner-distance">0m</span></span>
+      </div>
+    </div>
+    <canvas id="runner-canvas"></canvas>
+    <div id="runner-overlay" class="game-overlay">
+      <div class="overlay-card">
+        <h2 id="runner-overlay-title">Money Runner</h2>
+        <p id="runner-overlay-msg">Collect coins, dodge debt traps!<br/>Tap or press Space to jump.</p>
+        <div class="tip-box" id="runner-tip"></div>
+        <button class="btn-primary" id="runner-start-btn" onclick="Runner.start()">Play!</button>
+      </div>
+    </div>
+    <div class="runner-controls">
+      <button class="jump-btn" id="jump-btn" ontouchstart="Runner.jump()" onmousedown="Runner.jump()">JUMP</button>
+    </div>
+  </div>
+
+  <!-- QUIZ / ACADEMY SCREEN -->
+  <div id="screen-quiz" class="screen">
+    <div class="game-header">
+      <button class="btn-back" onclick="App.showScreen('screen-home')">✕</button>
+      <div class="game-score-bar">
+        <span>⭐ <span id="quiz-xp">0</span> XP</span>
+        <span id="quiz-progress-label">Topic 1 of 5</span>
+      </div>
+    </div>
+    <div class="quiz-container">
+      <div class="quiz-character" id="quiz-char">🦊</div>
+      <div class="speech-bubble" id="quiz-bubble">
+        <p id="quiz-question">Loading...</p>
+      </div>
+      <div class="quiz-answers" id="quiz-answers"></div>
+      <div class="quiz-feedback" id="quiz-feedback"></div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar" id="quiz-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUDGET BOSS SCREEN -->
+  <div id="screen-budget" class="screen">
+    <div class="game-header">
+      <button class="btn-back" onclick="App.showScreen('screen-home')">✕</button>
+      <div class="game-score-bar">
+        <span>💵 Budget Boss</span>
+        <span>Month: <span id="budget-month">1</span>/6</span>
+      </div>
+    </div>
+    <div class="budget-container">
+      <div class="budget-income-bar">
+        <span>Monthly Income:</span>
+        <strong id="budget-income">$0</strong>
+      </div>
+      <div class="budget-meter">
+        <div class="meter-label">
+          <span>Spent</span>
+          <span id="budget-spent-label">$0 / $0</span>
+        </div>
+        <div class="meter-track">
+          <div class="meter-fill" id="budget-meter-fill"></div>
+        </div>
+      </div>
+      <div class="expense-list" id="expense-list"></div>
+      <div class="budget-actions">
+        <button class="btn-primary" id="budget-submit-btn" onclick="Budget.submitMonth()">End Month</button>
+      </div>
+      <div class="budget-feedback" id="budget-feedback"></div>
+    </div>
+  </div>
+
+  <!-- STOCK SURGE SCREEN -->
+  <div id="screen-invest" class="screen">
+    <div class="game-header">
+      <button class="btn-back" onclick="App.showScreen('screen-home')">✕</button>
+      <div class="game-score-bar">
+        <span>📈 Stock Surge</span>
+        <span>💼 <span id="invest-portfolio">$1,000</span></span>
+      </div>
+    </div>
+    <div class="invest-container">
+      <div class="market-ticker" id="market-ticker"></div>
+      <div class="stock-chart-wrap">
+        <canvas id="stock-canvas" width="340" height="160"></canvas>
+      </div>
+      <div class="stock-list" id="stock-list"></div>
+      <div class="invest-actions">
+        <div class="invest-tip" id="invest-tip"></div>
+        <button class="btn-primary" onclick="Invest.nextRound()">Next Round ▶</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEADERBOARD SCREEN -->
+  <div id="screen-leaderboard" class="screen">
+    <div class="game-header">
+      <button class="btn-back" onclick="App.showScreen('screen-home')">✕</button>
+      <span class="header-title">🏆 Leaderboard</span>
+    </div>
+    <div id="leaderboard-container" class="leaderboard-container"></div>
+  </div>
+
+  <!-- LESSONS SCREEN -->
+  <div id="screen-lessons" class="screen">
+    <div class="game-header">
+      <button class="btn-back" onclick="App.showScreen('screen-home')">✕</button>
+      <span class="header-title">📚 Finance Library</span>
+    </div>
+    <div class="lessons-container" id="lessons-container"></div>
+  </div>
+
+  <!-- PROFILE SCREEN -->
+  <div id="screen-profile" class="screen">
+    <div class="game-header">
+      <button class="btn-back" onclick="App.showScreen('screen-home')">✕</button>
+      <span class="header-title">👤 My Profile</span>
+    </div>
+    <div class="profile-container">
+      <div class="avatar-section">
+        <div class="avatar" id="profile-avatar">🦊</div>
+        <h2 id="profile-name">Financial Hero</h2>
+        <div class="level-badge">Level <span id="profile-level">1</span></div>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-num" id="stat-xp">0</div><div class="stat-lbl">Total XP</div></div>
+        <div class="stat-card"><div class="stat-num" id="stat-coins">0</div><div class="stat-lbl">Coins</div></div>
+        <div class="stat-card"><div class="stat-num" id="stat-streak">0</div><div class="stat-lbl">Day Streak</div></div>
+        <div class="stat-card"><div class="stat-num" id="stat-lessons">0</div><div class="stat-lbl">Lessons Done</div></div>
+      </div>
+      <div class="badges-section">
+        <h3>Badges</h3>
+        <div class="badges-grid" id="badges-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Polyfill for roundRect on older browsers
+    if (!CanvasRenderingContext2D.prototype.roundRect) {
+      CanvasRenderingContext2D.prototype.roundRect = function(x, y, w, h, r) {
+        r = Math.min(r, w / 2, h / 2);
+        this.beginPath();
+        this.moveTo(x + r, y);
+        this.lineTo(x + w - r, y);
+        this.quadraticCurveTo(x + w, y, x + w, y + r);
+        this.lineTo(x + w, y + h - r);
+        this.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+        this.lineTo(x + r, y + h);
+        this.quadraticCurveTo(x, y + h, x, y + h - r);
+        this.lineTo(x, y + r);
+        this.quadraticCurveTo(x, y, x + r, y);
+        this.closePath();
+        return this;
+      };
+    }
+  </script>
+  <script src="data/lessons.js"></script>
+  <script src="leaderboard.js"></script>
+  <script src="games/runner.js"></script>
+  <script src="games/quiz.js"></script>
+  <script src="games/budget.js"></script>
+  <script src="games/invest.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

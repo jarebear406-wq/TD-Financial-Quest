@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TD Financial Quest — Investor Demo</title>
+  <link rel="stylesheet" href="demo.css"/>
+</head>
+<body>
+
+  <!-- PROGRESS BAR -->
+  <div id="demo-progress-bar"></div>
+
+  <!-- SLIDE COUNTER + CONTROLS -->
+  <div id="demo-controls">
+    <button id="demo-prev" onclick="Demo.prev()">‹</button>
+    <span id="demo-counter">1 / 8</span>
+    <button id="demo-next" onclick="Demo.next()">›</button>
+    <button id="demo-auto" onclick="Demo.toggleAuto()">⏸ Pause</button>
+    <a href="index.html" class="demo-live-btn" target="_blank">🚀 Open Live App</a>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 1 — TITLE
+  ══════════════════════════════════════════ -->
+  <section class="slide active" id="slide-1">
+    <div class="slide-bg slide-bg-green"></div>
+    <div class="slide-content center">
+      <div class="td-hero-logo">TD</div>
+      <h1 class="hero-title">Financial<br/><span>Quest</span></h1>
+      <p class="hero-sub">A gamified financial literacy platform for ages 12–22</p>
+      <div class="hero-tags">
+        <span class="tag">📱 Mobile-First</span>
+        <span class="tag">🖥️ Desktop Ready</span>
+        <span class="tag">🎮 Game-Based Learning</span>
+        <span class="tag">🏦 TD Branded</span>
+      </div>
+      <div class="hero-stat-row">
+        <div class="hero-stat"><div class="hero-stat-num">4</div><div class="hero-stat-lbl">Mini Games</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">6</div><div class="hero-stat-lbl">Lessons</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">10+</div><div class="hero-stat-lbl">Topics</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">0</div><div class="hero-stat-lbl">Install Required</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 2 — THE PROBLEM
+  ══════════════════════════════════════════ -->
+  <section class="slide" id="slide-2">
+    <div class="slide-bg slide-bg-dark"></div>
+    <div class="slide-content">
+      <div class="slide-label">THE PROBLEM</div>
+      <h2 class="slide-title">Young Canadians are financially unprepared</h2>
+      <div class="problem-grid">
+        <div class="problem-card reveal" style="--d:0.1s">
+          <div class="problem-icon">📉</div>
+          <div class="problem-stat">67%</div>
+          <div class="problem-desc">of Canadians aged 18–24 have no savings plan</div>
+        </div>
+        <div class="problem-card reveal" style="--d:0.3s">
+          <div class="problem-icon">💳</div>
+          <div class="problem-stat">$8,200</div>
+          <div class="problem-desc">average credit card debt for Canadians under 25</div>
+        </div>
+        <div class="problem-card reveal" style="--d:0.5s">
+          <div class="problem-icon">🏫</div>
+          <div class="problem-stat">Only 3</div>
+          <div class="problem-desc">Canadian provinces require financial literacy in school</div>
+        </div>
+        <div class="problem-card reveal" style="--d:0.7s">
+          <div class="problem-icon">📱</div>
+          <div class="problem-stat">7hrs/day</div>
+          <div class="problem-desc">average screen time for teens — mostly games & social media</div>
+        </div>
+      </div>
+      <div class="slide-callout reveal" style="--d:0.9s">
+        💡 The opportunity: meet young people where they already are — on their phones, playing games.
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 3 — THE SOLUTION
+  ══════════════════════════════════════════ -->
+  <section class="slide" id="slide-3">
+    <div class="slide-bg slide-bg-green"></div>
+    <div class="slide-content">
+      <div class="slide-label">THE SOLUTION</div>
+      <h2 class="slide-title">Learn money skills through play</h2>
+      <div class="solution-row">
+        <div class="solution-left reveal" style="--d:0.1s">
+          <div class="solution-point">
+            <span class="sp-icon">🎮</span>
+            <div><strong>Game-based learning</strong><br/>Inspired by Temple Run & ABCmouse — proven engagement models</div>
+          </div>
+          <div class="solution-point">
+            <span class="sp-icon">⭐</span>
+            <div><strong>XP, levels & badges</strong><br/>Dopamine-driven progression keeps users coming back daily</div>
+          </div>
+          <div class="solution-point">
+            <span class="sp-icon">🏆</span>
+            <div><strong>Social leaderboard</strong><br/>Shareable score links create peer competition and virality</div>
+          </div>
+          <div class="solution-point">
+            <span class="sp-icon">🏦</span>
+            <div><strong>TD brand integration</strong><br/>Every lesson reinforces TD products: TFSA, savings accounts, credit cards</div>
+          </div>
+        </div>
+        <div class="solution-right reveal" style="--d:0.3s">
+          <div class="phone-mockup">
+            <div class="phone-screen">
+              <div class="mock-header">TD Financial Quest</div>
+              <div class="mock-grid">
+                <div class="mock-card">🏃<br/><small>Money Runner</small></div>
+                <div class="mock-card">🧠<br/><small>Finance Academy</small></div>
+                <div class="mock-card">📊<br/><small>Budget Boss</small></div>
+                <div class="mock-card">📈<br/><small>Stock Surge</small></div>
+              </div>
+              <div class="mock-xp-bar">
+                <div class="mock-xp-fill" id="mock-xp-anim"></div>
+              </div>
+              <div class="mock-stats">⭐ 340 XP &nbsp;|&nbsp; 💰 127 coins &nbsp;|&nbsp; 🔥 5 day streak</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 4 — GAME 1: MONEY RUNNER
+  ══════════════════════════════════════════ -->
+  <section class="slide" id="slide-4">
+    <div class="slide-bg slide-bg-dark"></div>
+    <div class="slide-content">
+      <div class="slide-label">GAME 1 OF 4</div>
+      <h2 class="slide-title">🏃 Money Runner</h2>
+      <p class="slide-desc">Temple Run-style endless runner. Dodge debt traps, collect coins, learn financial hazards.</p>
+      <div class="game-demo-layout">
+        <div class="game-demo-screen reveal" style="--d:0.1s">
+          <canvas id="demo-runner-canvas" width="320" height="200"></canvas>
+        </div>
+        <div class="game-demo-points reveal" style="--d:0.3s">
+          <div class="demo-point"><span class="dp-icon">💸</span><div><strong>Dodge DEBT obstacles</strong><br/>Each hit shows a real financial tip about avoiding debt</div></div>
+          <div class="demo-point"><span class="dp-icon">💰</span><div><strong>Collect coin tiers</strong><br/>Bronze, silver, gold coins = $1, $5, $10 — teaches value</div></div>
+          <div class="demo-point"><span class="dp-icon">⚡</span><div><strong>Speed increases</strong><br/>Mirrors how financial pressure builds — stay sharp!</div></div>
+          <div class="demo-point"><span class="dp-icon">📏</span><div><strong>Distance = XP</strong><br/>Longer runs earn more experience points</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 5 — GAMES 2, 3, 4
+  ══════════════════════════════════════════ -->
+  <section class="slide" id="slide-5">
+    <div class="slide-bg slide-bg-light"></div>
+    <div class="slide-content">
+      <div class="slide-label">GAMES 2 · 3 · 4</div>
+      <h2 class="slide-title">Three more ways to learn</h2>
+      <div class="three-games">
+
+        <div class="tg-card reveal" style="--d:0.1s">
+          <div class="tg-icon">🧠</div>
+          <h3>Finance Academy</h3>
+          <p>ABCmouse-style quiz with animated character guide. 10 questions covering budgeting, credit scores, TFSA, compound interest.</p>
+          <div class="tg-tags"><span>+20 XP per correct answer</span><span>Instant explanations</span></div>
+          <div class="tg-mock">
+            <div class="tg-bubble">What is compound interest?</div>
+            <div class="tg-answers">
+              <div class="tg-ans correct">✅ Earning interest on your interest</div>
+              <div class="tg-ans">A type of tax</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tg-card reveal" style="--d:0.3s">
+          <div class="tg-icon">📊</div>
+          <h3>Budget Boss</h3>
+          <p>Drag expenses up/down to balance a real monthly budget. Two scenarios: part-time job ($1,800/mo) and first full-time job ($3,200/mo).</p>
+          <div class="tg-tags"><span>50/30/20 rule</span><span>6 months of play</span></div>
+          <div class="tg-mock">
+            <div class="tg-budget-bar">
+              <div class="tg-budget-fill" id="tg-budget-anim"></div>
+            </div>
+            <div class="tg-budget-label">$1,640 spent of $1,800 ✅</div>
+          </div>
+        </div>
+
+        <div class="tg-card reveal" style="--d:0.5s">
+          <div class="tg-icon">📈</div>
+          <h3>Stock Surge</h3>
+          <p>Buy and sell 4 stocks across 10+ rounds. Live chart updates, portfolio tracking, and tips on diversification and risk.</p>
+          <div class="tg-tags"><span>Real market concepts</span><span>TFSA education</span></div>
+          <div class="tg-mock">
+            <canvas id="demo-mini-chart" width="240" height="80"></canvas>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 6 — LEADERBOARD & SOCIAL
+  ══════════════════════════════════════════ -->
+  <section class="slide" id="slide-6">
+    <div class="slide-bg slide-bg-dark"></div>
+    <div class="slide-content">
+      <div class="slide-label">COMPETITION & VIRALITY</div>
+      <h2 class="slide-title">🏆 Leaderboard drives engagement</h2>
+      <div class="lb-demo-layout">
+        <div class="lb-demo-left reveal" style="--d:0.1s">
+          <div class="lb-mock">
+            <div class="lb-mock-tabs">
+              <span class="lb-mock-tab active">⭐ Overall</span>
+              <span class="lb-mock-tab">🏃 Runner</span>
+              <span class="lb-mock-tab">🧠 Quiz</span>
+            </div>
+            <div class="lb-mock-podium">
+              <div class="lb-pod silver"><div>Alex</div><div class="lb-pod-score">280 XP</div><div class="lb-pod-block">🥈</div></div>
+              <div class="lb-pod gold"><div>Jordan</div><div class="lb-pod-score">340 XP</div><div class="lb-pod-block">🥇</div></div>
+              <div class="lb-pod bronze"><div>Sam</div><div class="lb-pod-score">195 XP</div><div class="lb-pod-block">🥉</div></div>
+            </div>
+            <div class="lb-mock-rows">
+              <div class="lb-mock-row gold-row">🥇 Jordan <span>340 XP</span></div>
+              <div class="lb-mock-row">🥈 Alex <span>280 XP</span></div>
+              <div class="lb-mock-row">🥉 Sam <span>195 XP</span></div>
+              <div class="lb-mock-row you-row">🟢 You <span class="you-tag">YOU</span> <span>120 XP</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="lb-demo-right reveal" style="--d:0.3s">
+          <div class="lb-feature"><span>🔗</span><div><strong>Shareable score links</strong><br/>One click generates a URL. When a friend opens it, your scores auto-import to their leaderboard — no account needed.</div></div>
+          <div class="lb-feature"><span>📊</span><div><strong>5 competitive categories</strong><br/>Overall XP, Money Runner, Finance Academy, Budget Boss, Stock Surge — something for every play style.</div></div>
+          <div class="lb-feature"><span>🔥</span><div><strong>Daily streak system</strong><br/>Consecutive days of play are tracked and displayed — drives daily active users.</div></div>
+          <div class="lb-feature"><span>🎖️</span><div><strong>6 unlockable badges</strong><br/>First Run, Quiz Master, Budget Boss, Investor, Super Saver, Scholar.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 7 — TECH & DISTRIBUTION
+  ══════════════════════════════════════════ -->
+  <section class="slide" id="slide-7">
+    <div class="slide-bg slide-bg-light"></div>
+    <div class="slide-content">
+      <div class="slide-label">TECHNOLOGY</div>
+      <h2 class="slide-title">Zero friction. Instant access.</h2>
+      <div class="tech-grid">
+        <div class="tech-card reveal" style="--d:0.1s">
+          <div class="tech-icon">⚡</div>
+          <h3>No install required</h3>
+          <p>Pure HTML/CSS/JS. Opens instantly in any browser on any device. Share a link — that's it.</p>
+        </div>
+        <div class="tech-card reveal" style="--d:0.2s">
+          <div class="tech-icon">📱</div>
+          <h3>Mobile-first design</h3>
+          <p>Touch controls, responsive layout, bottom nav. Feels native on iOS and Android.</p>
+        </div>
+        <div class="tech-card reveal" style="--d:0.3s">
+          <div class="tech-icon">🖥️</div>
+          <h3>Full desktop experience</h3>
+          <p>Sidebar navigation, two-column layouts, keyboard controls. Works in classrooms and at home.</p>
+        </div>
+        <div class="tech-card reveal" style="--d:0.4s">
+          <div class="tech-icon">🔒</div>
+          <h3>Privacy first</h3>
+          <p>No accounts, no data collection. Progress stored locally on device. PIPEDA compliant by design.</p>
+        </div>
+        <div class="tech-card reveal" style="--d:0.5s">
+          <div class="tech-icon">🌐</div>
+          <h3>GitHub Pages ready</h3>
+          <p>Free hosting via GitHub Pages. Can be embedded in TD's existing web properties with one iframe.</p>
+        </div>
+        <div class="tech-card reveal" style="--d:0.6s">
+          <div class="tech-icon">🔧</div>
+          <h3>Easily extensible</h3>
+          <p>New games, lessons, and TD product integrations can be added as modules. No framework lock-in.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 8 — CALL TO ACTION
+  ══════════════════════════════════════════ -->
+  <section class="slide" id="slide-8">
+    <div class="slide-bg slide-bg-green"></div>
+    <div class="slide-content center">
+      <div class="cta-icon">🚀</div>
+      <h2 class="cta-title">Ready to play?</h2>
+      <p class="cta-sub">TD Financial Quest is live, fully functional, and ready for user testing today.</p>
+      <div class="cta-steps">
+        <div class="cta-step reveal" style="--d:0.1s"><span class="step-num">1</span><span>Open the live app in your browser</span></div>
+        <div class="cta-step reveal" style="--d:0.3s"><span class="step-num">2</span><span>Play any game — no signup needed</span></div>
+        <div class="cta-step reveal" style="--d:0.5s"><span class="step-num">3</span><span>Share your score link with the team</span></div>
+      </div>
+      <a href="index.html" class="cta-btn" target="_blank">Open TD Financial Quest →</a>
+      <p class="cta-note">Built with TD green · No backend · No cost to host · Open source</p>
+    </div>
+  </section>
+
+  <script src="demo.js"></script>
+</body>
+</html>
